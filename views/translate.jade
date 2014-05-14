@@ -3,8 +3,8 @@ extends layout
 
 block content
 
-	form(id="", method="", action="")
-	input.org-lang(type="text", placeholder="Original Language")
-	input.target-lang(type="text", placeholder="Target Language")
-	input.word-translated(type="text", placeholder="Word to translate")
-	button(type="submit").btn.btn-default button
+	form.translate-form(id="", method="", action="/submit")
+		input.org-lang(type="text", placeholder="Original Language")
+		input.target-lang(type="text", placeholder="Target Language")
+		input.word-to-translate(type="text", placeholder="Word to translate")
+		button(type="submit").btn.btn-default button
