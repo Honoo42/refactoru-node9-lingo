@@ -19,9 +19,9 @@ $(document).ready(function(){
 		$.post('/submit', inputData, function(data){
 			// send js obj to server
 			console.log('ajax still working!');
-			data = inputData;
-			
+			$('body').append(data);
 		});
+		// $.get('/translate', inputData)
 
 		console.log(inputData);
 
@@ -30,6 +30,7 @@ $(document).ready(function(){
 });
 
 // DONE - send inputData to the API 
-// verify that the API (server to server) sent the data back to the server
-// choose what we want from beglobal, then send that part back to the client
+// DONE - verify that the API (server to server) sent the data back to the server
+// DONE - choose what we want from beglobal 
+// then send that part back to the client
 // verify that the client received it (results of server route for request) in the clientside callback

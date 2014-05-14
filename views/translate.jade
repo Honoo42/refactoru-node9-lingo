@@ -1,5 +1,6 @@
-extends layout
+//- rendered before any of the ajax happens (when the user first requests the page)
 
+extends layout
 
 block content
 
@@ -8,3 +9,6 @@ block content
 		input.target-lang(type="text", placeholder="Target Language")
 		input.word-to-translate(type="text", placeholder="Word to translate")
 		button(type="submit").btn.btn-default button
+
+	h3 result of translation
+		//- p #{result.translation}

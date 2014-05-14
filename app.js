@@ -16,6 +16,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser());
 
 app.get('/translate', translateController.transRender);
+app.get('/submit', submitController.transFunc);
 app.post('/submit', submitController.transFunc);
 
 var server = app.listen(3669, function() {

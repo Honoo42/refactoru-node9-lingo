@@ -3,6 +3,7 @@ var beglobal = new BeGlobal.BeglobalAPI({
   api_token: '%2BafbIAIFaAoKGmymI85dMg%3D%3D'
 });
 
+// async call (imagine that it takes 10s to complete)
 var submit = {
 	transFunc: function(req, res){
 		// server receives request
@@ -15,50 +16,31 @@ var submit = {
 		from: req.body.inputLang, 
 		to: req.body.targetLang
 	},
+	// beglobal.translate callback (nodeback)
+	// meaning that this inner stuff is going to be called later 
+	// (after stuff outside of the nodeback)
 	  function(err, results) {
 	    if (err) {
 	      return console.log(err);
 	    }
 
-	    console.log(results);
+	    // all the results that come from the API
+	    console.log("full results: ", results);
+	    // the output TRANSLATED word!!
+	    console.log("translation output: ", results.translation);
+		// has to be INSIDE the callback
+		res.send(results.translation);
 	  }
+	  // 	function(){
+	  // 		// code
+	  // })
 	);
 
 	console.log("inputLang", req.body.inputLang);
 	console.log("targetLang", req.body.targetLang);
 	console.log("wordTrans", req.body.wordTrans);
 
-	// beglobal.languages.all(
-	//   function(err, results) {
-	//     if (err) {
-	//       return console.log(err);
-	//     }
 
-	//     console.log(results);
-	//     // returning a list of language pairs
-	    
-	//       [
-	//         {
-	//             "from": {
-	//                 "id": "505037985fe01ac20407b7fb",
-	//                 "code": "eng",
-	//                 "name": "English",
-	//                 "fullName": "English",
-	//                 "rightToLeft": false
-	//             },
-	//             "to": {
-	//                 "id": "505037985fe01ac20407b81f",
-	//                 "code": "spa",
-	//                 "name": "Spanish",
-	//                 "fullName": "Spanish; Castilian",
-	//                 "rightToLeft": false
-	//             }
-	//         },
-	//       ]
-	    
-	//   }
-	// );
-	res.send('submit');
 	}
 }
 
