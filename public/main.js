@@ -29,7 +29,7 @@ $(document).ready(function(){
 	});
 });
 
-// send inputData to the API
+// DONE - send inputData to the API 
 // verify that the API (server to server) sent the data back to the server
 // choose what we want from beglobal, then send that part back to the client
 // verify that the client received it (results of server route for request) in the clientside callback
