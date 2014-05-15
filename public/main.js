@@ -1,3 +1,5 @@
+
+
 // add the handler for submit event
 $(document).ready(function(){
 	// 'submit' lets it capture an enter key or click
@@ -22,15 +24,42 @@ $(document).ready(function(){
 			$('body').append(data);
 		});
 		// $.get('/translate', inputData)
-
-		console.log(inputData);
-
 		return false;
 	});
-});
 
-// DONE - send inputData to the API 
-// DONE - verify that the API (server to server) sent the data back to the server
-// DONE - choose what we want from beglobal 
-// DONE - then send that part back to the client
-// DONE - verify that the client received it (results of server route for request) in the clientside callback
+	var generatedWords = $('.word').eq(10).text();
+
+
+	$('.submit-answer').on('click', function(){
+		var isValid = true;
+		$('tr').each(function(index, element){
+			var input = $(this).find('input').val();
+			var word = $(this).find('.word').text();
+			// console.log('each running')
+			if(input != word) {
+				isValid = false;
+				console.log('if input hit')
+			}
+			$.post('/quiz', input, function(data){
+				if (input === word) {
+					console.log('stuff');
+				}
+			});
+		});
+		// var userAnswers = {
+		// 	oneAnswer: $('.input-word1').val(),
+		// 	twoAnswer: $('.input-word2').val(),
+		// 	threeAnswer: $('.input-word3').val(),
+		// 	fourAnswer: $('.input-word4').val(),
+		// 	fiveAnswer: $('.input-word5').val(),
+		// 	sixAnswer: $('.input-word6').val(),
+		// 	sevenAnswer: $('.input-word7').val(),
+		// 	eightAnswer: $('.input-word8').val(),
+		// 	nineAnswer: $('.input-word9').val(),
+		// 	tenAnswer: $('.input-word10').val(),
+		// };
+		// console.log(randomWords1);
+		// console.log(userAnswers.oneAnswer);
+
+	});
+});

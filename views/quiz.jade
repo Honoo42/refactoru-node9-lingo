@@ -10,51 +10,62 @@ block content
 			option(value="jpn") Japanese
 			option(value="spa") Spanish
 			option(value="ger") German
-
 	table.tftable(border='1')
 		
 		tr
 			th English (original language)
 			th Target Language (we want to replace this with whatever they choose)
+			th Answer check
 		tr
-			td= randomWords1
-			td= 
-				input.input-word(type="text", placeholder="placeholder")
-		tr
-			td= randomWords2
+			td.word= randomWords1
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word1(type="text", placeholder="placeholder")
+			td.answer 
 		tr
-			td= randomWords3
+			td.word= randomWords2
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word2(type="text", placeholder="placeholder")
+			td.answer
 		tr
-			td= randomWords4
+			td.word= randomWords3
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word3(type="text", placeholder="placeholder")
+			td.answer
 		tr
-			td= randomWords5
+			td.word= randomWords4
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word4(type="text", placeholder="placeholder")
+			td.answer
+		tr
+			td.word= randomWords5
+			td 
+				input.input-word5(type="text", placeholder="placeholder")
+			td.answer
 				tr
-			td= randomWords6
+			td.word= randomWords6
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word6(type="text", placeholder="placeholder")
+			td.answer
 		tr
-			td= randomWords7
+			td.word= randomWords7
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word7(type="text", placeholder="placeholder")
+			td.answer
 		tr
-			td= randomWords8
+			td.word= randomWords8
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word8(type="text", placeholder="placeholder")
+			td.answer
 		tr
-			td= randomWords9
+			td.word= randomWords9
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word9(type="text", placeholder="placeholder")
+			td.answer
 		tr
-			td= randomWords10
+			td.word= randomWords10
 			td 
-				input.input-word(type="text", placeholder="placeholder")
+				input.input-word10(type="text", placeholder="placeholder")
+			td.answer
+	button(type="",class="submit-answer" ) Check your work!
 
 	script(type="text/javascript", src="../models/words.js")

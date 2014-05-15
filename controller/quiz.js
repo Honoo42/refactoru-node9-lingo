@@ -15,8 +15,6 @@ var quiz = {
 			randomWords9: _.sample(words),
 			randomWords10: _.sample(words)
 		}
-
-
 		);
 	},
 	

@@ -25,6 +25,7 @@ app.get('/submit', submitController.transFunc);
 app.post('/submit', submitController.transFunc);
 
 app.get('/quiz', quizController.key);
+app.post('/quiz', quizController.key);
 
 var server = app.listen(3669, function() {
 	console.log('Express server listening on port ' + server.address().port);
