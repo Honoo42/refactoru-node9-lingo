@@ -29,23 +29,34 @@ $(document).ready(function(){
 
 	var generatedWords = $('.word').eq(10).text();
 
-
 	$('.submit-answer').on('click', function(){
-		var isValid = true;
-		$('tr').each(function(index, element){
-			var input = $(this).find('input').val();
-			var word = $(this).find('.word').text();
-			// console.log('each running')
-			if(input != word) {
-				isValid = false;
-				console.log('if input hit')
-			}
-			$.post('/quiz', input, function(data){
-				if (input === word) {
-					console.log('stuff');
+		var input = $(this).find('input').val();
+		var word = $(this).find('.word').text();
+		$.post('/quiz', {
+			words: $('.word')
+					.toArray()
+					.map(function(a)
+						{
+							return $(a).text()
+						})
+		}, function(data){
+			console.log(data);
+			return;
+			var isValid = true;
+			$('tr').each(function(index, element){
+				var input = $(this).find('input').val();
+				var word = $(this).find('.word').text();
+				// console.log('each running')
+				if(input != word) {
+					isValid = false;
+					console.log('if input hit');
 				}
+
+				// console.log('word matched!');
+				// console.log($(this));
 			});
 		});
+	});
 		// var userAnswers = {
 		// 	oneAnswer: $('.input-word1').val(),
 		// 	twoAnswer: $('.input-word2').val(),
@@ -61,5 +72,4 @@ $(document).ready(function(){
 		// console.log(randomWords1);
 		// console.log(userAnswers.oneAnswer);
 
-	});
 });

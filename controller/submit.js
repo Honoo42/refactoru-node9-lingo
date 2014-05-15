@@ -40,7 +40,6 @@ var submit = {
 	console.log("targetLang", req.body.targetLang);
 	console.log("wordTrans", req.body.wordTrans);
 
-
 	}
 }
 

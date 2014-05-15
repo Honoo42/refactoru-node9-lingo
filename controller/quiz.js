@@ -14,9 +14,11 @@ var quiz = {
 			randomWords8: _.sample(words),
 			randomWords9: _.sample(words),
 			randomWords10: _.sample(words)
-		}
-		);
+		});
 	},
+	translate: function(req, res){
+		res.send(req.body.words);
+	}
 	
 }
 
