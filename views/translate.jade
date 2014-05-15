@@ -8,7 +8,12 @@ block content
 		input.org-lang(type="text", placeholder="Original Language")
 		input.target-lang(type="text", placeholder="Target Language")
 		input.word-to-translate(type="text", placeholder="Word to translate")
-		button(type="submit").btn.btn-default button
+		button(type="submit").btn.btn-default.translate-now Translate NOW
+	
+	form(action="/quiz")
+		button(type="button").go-quiz-page
+			a(href='/quiz') Go to the Quiz PAGE!!
+
 
 	h3 result of translation
 		//- p #{result.translation}

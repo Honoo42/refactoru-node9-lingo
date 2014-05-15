@@ -1,0 +1,60 @@
+extends layout
+
+block content
+
+	h1 What lang u sutdy?
+	p
+		select(name="select")
+			option(value="eng") English
+			option(value="fra") French
+			option(value="jpn") Japanese
+			option(value="spa") Spanish
+			option(value="ger") German
+
+	table.tftable(border='1')
+		
+		tr
+			th English (original language)
+			th Target Language (we want to replace this with whatever they choose)
+		tr
+			td= randomWords1
+			td= 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords2
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords3
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords4
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords5
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+				tr
+			td= randomWords6
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords7
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords8
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords9
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+		tr
+			td= randomWords10
+			td 
+				input.input-word(type="text", placeholder="placeholder")
+
+	script(type="text/javascript", src="../models/words.js")

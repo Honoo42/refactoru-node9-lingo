@@ -3,6 +3,11 @@ var bodyParser = require('body-parser');
 var BeGlobal = require('node-beglobal');
 var translateController = require('./controller/translate.js');
 var submitController = require('./controller/submit.js');
+var quizController = require('./controller/quiz.js');
+var _ = require('underscore');
+var words = require('./models/words');
+
+var genRandomWord = _.sample(words);
 
 //initialize the BeGlobal API
 var beglobal = new BeGlobal.BeglobalAPI({
@@ -18,6 +23,8 @@ app.use(bodyParser());
 app.get('/translate', translateController.transRender);
 app.get('/submit', submitController.transFunc);
 app.post('/submit', submitController.transFunc);
+
+app.get('/quiz', quizController.key);
 
 var server = app.listen(3669, function() {
 	console.log('Express server listening on port ' + server.address().port);
