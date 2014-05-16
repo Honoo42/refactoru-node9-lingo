@@ -17,7 +17,8 @@ var quiz = {
 		});
 	},
 	translate: function(req, res){
-		res.send(req.body.words);
+		// send an array of words
+		res.send(req.body);
 	}
 	
 }

@@ -27,23 +27,23 @@ $(document).ready(function(){
 		return false;
 	});
 
-	var generatedWords = $('.word').eq(10).text();
+	// var generatedWords = $('.word').eq(10).text();
 
 	$('.submit-answer').on('click', function(){
-		var input = $(this).find('input').val();
+		var input = $(this).find('.input-word').val();
 		var word = $(this).find('.word').text();
 		$.post('/quiz', {
-			words: $('.word')
-					.toArray()
-					.map(function(a)
-						{
-							return $(a).text()
+			words: $('.word').toArray().map(function(a){
+								return $(a).text();
+							}),
+			inputs: $('.input-word').toArray().map(function(a){
+							return $(a).val();
 						})
 		}, function(data){
-			console.log(data);
-			return;
+			console.log("generated words: ", data.words);
+			console.log("user answers: ", data.inputs);
 			var isValid = true;
-			$('tr').each(function(index, element){
+			$('.custom-row').each(function(index, element){
 				var input = $(this).find('input').val();
 				var word = $(this).find('.word').text();
 				// console.log('each running')
@@ -54,6 +54,7 @@ $(document).ready(function(){
 
 				// console.log('word matched!');
 				// console.log($(this));
+				
 			});
 		});
 	});
