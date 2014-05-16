@@ -1,5 +1,3 @@
-
-
 // add the handler for submit event
 $(document).ready(function(){
 	// 'submit' lets it capture an enter key or click
@@ -49,7 +47,7 @@ $(document).ready(function(){
 				// console.log('each running')
 				if(input != word) {
 					isValid = false;
-					console.log('if input hit');
+					console.log(input, word, '<-- were incorrect');
 				}
 
 				// console.log('word matched!');
@@ -57,6 +55,7 @@ $(document).ready(function(){
 				
 			});
 		});
+		// send data.words back to the server
 	});
 		// var userAnswers = {
 		// 	oneAnswer: $('.input-word1').val(),
